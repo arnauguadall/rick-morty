@@ -1,4 +1,3 @@
-/* eslint-disable */
 import "./card.css";
 import { ReactComponent as Star } from "../../assets/svg/star.svg";
 

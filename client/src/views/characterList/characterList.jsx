@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Card from '../../components/card/card.jsx'
+import Card from "../../components/card/card.jsx";
 
 const CharacterList = () => {
   const [list, setList] = useState({});
@@ -13,9 +13,15 @@ const CharacterList = () => {
       });
   }, [list]);
 
-  return (<div>
-    {list ? Object.keys(list).map((character) => <Card character={list[character]} />) : 'loading'}
-  </div>);
+  return (
+    <div>
+      {list
+        ? Object.keys(list).map((character) => (
+            <Card key={list[character].name} character={list[character]} />
+          ))
+        : "loading"}
+    </div>
+  );
 };
 
 export default CharacterList;
