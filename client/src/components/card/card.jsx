@@ -1,6 +1,6 @@
 /* eslint-disable */
 import "./card.css";
-import { ReactComponent as Star } from "../../assets/star.svg";
+import { ReactComponent as Star } from "../../assets/svg/star.svg";
 
 const Card = ({ character }) => {
   const { name, status, image, species, location } = character;
@@ -13,16 +13,14 @@ const Card = ({ character }) => {
 
       <div className="card__info__column">
         <div className="card__svg__fav">
-          <Star style={{width:"44px", height:"44px"}}/>
-        </div> 
+          <Star style={{ width: "44px", height: "44px" }} />
+        </div>
         <h2>{name}</h2>
 
         <div className="card__status__align">
           <span className={`card__status__${status}`} /> {status} - {species}
         </div>
-        <div className="card__status__align">
-          Location:  {location.name}
-        </div>
+        <div className="card__status__align">Location: {location.name}</div>
 
         <div>See detail</div>
       </div>
