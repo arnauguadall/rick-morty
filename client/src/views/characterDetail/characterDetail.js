@@ -12,12 +12,10 @@ const CharacterDetail = () => {
   const { name, status, image, species, location, episode } = character;
 
   useEffect(() => {
-    console.log(character);
     if (id) {
       fetch(`/character/${id}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setCharacter(data);
         });
     }
@@ -26,9 +24,26 @@ const CharacterDetail = () => {
 
   const fav = character.fav ? "#D5D803" : "#FFFFFF";
 
+  const handleCreate = () => {
+    fetch("/create-user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user: "test",
+        password: "test",
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  };
+
   return id ? (
     <div className="characterDetail__position">
       <div className="characterDetail__direction__row">
+        <button onClick={handleCreate}>Create User</button>
         <div className="characterDetail__img__width">
           <img src={image} alt={`${name} character`} />
         </div>

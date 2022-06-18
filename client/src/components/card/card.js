@@ -1,11 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import "./card.css";
 import { ReactComponent as Star } from "../../assets/svg/star.svg";
 
 const Card = ({ character }) => {
-  const { name, status, image, species, location } = character;
+  const navigate = useNavigate();
+  const { id, name, status, image, species, location } = character;
+
+  const handleOpenDetail = () => {
+    return navigate(`/character/${id}`);
+  };
 
   return (
-    <div className="card__direction__row">
+    <div className="card__direction__row" onClick={handleOpenDetail}>
       <div className="card__img__width">
         <img src={image} alt={`${name} character`} />
       </div>

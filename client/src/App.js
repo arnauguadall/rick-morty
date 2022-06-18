@@ -10,7 +10,7 @@ import CharacterDetail from "./views/characterDetail/characterDetail";
 function App() {
   return (
     <div className="App">
-      <h1>The Rick and Morty API</h1>
+      <h1>The Rick and Morty App</h1>
 
       <BrowserRouter>
         <Routes>
