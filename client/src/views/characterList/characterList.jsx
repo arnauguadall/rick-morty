@@ -6,10 +6,10 @@ const CharacterList = () => {
   const [list, setList] = useState({});
 
   useState(() => {
-    fetch("https://rickandmortyapi.com/api/character")
+    fetch("/characters")
       .then((response) => response.json())
-      .then((data) => {
-        setList(data.results);
+      .then((characters) => {
+        setList(characters);
       });
   }, [list]);
 
