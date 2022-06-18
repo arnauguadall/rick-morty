@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Card from "../../components/card/card.jsx";
+import Card from "../../components/card/card.js";
 
 import './characterList.css';
 

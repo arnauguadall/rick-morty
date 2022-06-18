@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Card from "./card.jsx";
+import Card from "./card.js";
 
 describe("<Card /> component", () => {
   let component;
