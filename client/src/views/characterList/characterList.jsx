@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Card from "../../components/card/card.js";
 
@@ -7,13 +7,13 @@ import './characterList.css';
 const CharacterList = () => {
   const [list, setList] = useState({});
 
-  useState(() => {
+  useEffect(() => {
     fetch("/characters")
       .then((response) => response.json())
       .then((characters) => {
         setList(characters);
       });
-  }, [list]);
+  }, []);
 
   return (
     <div className="characterList__layout_wrap">

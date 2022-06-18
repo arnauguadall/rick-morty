@@ -1,0 +1,66 @@
+.characterDetail__position {
+  display: flex;
+  justify-content: center
+}
+
+.characterDetail__direction__row {
+  width: 600px;
+  height: 220px;
+  display: flex;
+  margin: 0.75rem;
+  background: #3c3e44;
+  overflow: hidden;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
+    rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+  border-radius: 0.5rem;
+}
+
+.characterDetail__img__width {
+  flex: 1;
+}
+
+.characterDetail__info__column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 20px 20px 20px;
+  color: white;
+  position: relative;
+}
+
+.characterDetail__status__align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.characterDetail__status__Alive {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.375rem;
+  border-radius: 50%;
+  background: rgb(85, 204, 68);
+}
+
+.characterDetail__status__Dead {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.375rem;
+  border-radius: 50%;
+  background: rgb(214, 61, 46);
+}
+
+.characterDetail__status__unknown {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.375rem;
+  border-radius: 50%;
+  background: rgb(158, 158, 158);
+}
+
+.characterDetail__svg__fav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

@@ -1,7 +1,9 @@
+body {
+  background-color: rgb(32, 35, 41);
+}
+
 .App {
-  height: 100%;
   padding: 20px;
-  background-color: rgb(32, 35, 41);;
 }
 
 .App h1 {

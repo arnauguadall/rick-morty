@@ -10,9 +10,9 @@ const Layout = () => {
           <li>
             <Link to="/">Back to characters</Link>
           </li>
-          {<li>
-            <Link to="/character/:id">Character</Link>
-          </li>}
+          <li>
+            <Link to="/character/2">Character</Link>
+          </li>
         </ul>
       </nav>
 
