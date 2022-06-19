@@ -26,8 +26,6 @@ const Card = ({ character }) => {
           <span className={`card__status__${status}`} /> {status} - {species}
         </div>
         <div className="card__status__align">Location: {location.name}</div>
-
-        <div>Click to see details</div>
       </div>
     </div>
   );

@@ -1,6 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import Card from "./card.js";
 
+// Jest mock to use react-router-dom in this component
+const mockedUsedNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
 describe("<Card /> component", () => {
   let component;
 
@@ -20,7 +27,11 @@ describe("<Card /> component", () => {
       url: "https://rickandmortyapi.com/api/location/3",
     },
     image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-    episode: ["https://rickandmortyapi.com/api/episode/1"],
+    episode: [
+      "https://rickandmortyapi.com/api/episode/1",
+      "https://rickandmortyapi.com/api/episode/2",
+      "https://rickandmortyapi.com/api/episode/3",
+    ],
     url: "https://rickandmortyapi.com/api/character/1",
     created: "2017-11-04T18:48:46.250Z",
   };
@@ -40,7 +51,7 @@ describe("<Card /> component", () => {
     expect(screen.getByText(/Human/i)).toBeInTheDocument();
   });
 
-  test('should render the character image', () => {
+  test("should render the character image", () => {
     const logo = screen.getByRole("img");
     expect(logo).toHaveAttribute(
       "src",
