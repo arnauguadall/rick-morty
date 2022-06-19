@@ -6,6 +6,7 @@ import NoPage404 from "./components/noPage404/noPage404";
 import Layout from "./components/layout/layout";
 import CharacterList from "./views/characterList/characterList";
 import CharacterDetail from "./views/characterDetail/characterDetail";
+import CreateUser from "./views/createUser/createUser";
 
 function App() {
   return (
@@ -16,15 +17,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<CharacterList />} />
+            <Route path="user/create" element={<CreateUser />} />
             <Route path="character/:id" element={<CharacterDetail />} />
             <Route path="*" element={<NoPage404 />} />
           </Route>
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
-
 
 export default App;

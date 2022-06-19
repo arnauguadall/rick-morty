@@ -10,6 +10,9 @@ const Layout = () => {
           <li>
             <Link to="/">Back to characters</Link>
           </li>
+          <li>
+            <Link to="/user/create">Create user</Link>
+          </li>
         </ul>
       </nav>
 

@@ -1,0 +1,13 @@
+.createUser__form {
+  display: flex;
+  justify-content: center;
+}
+
+.createUser__form form label{
+  margin: 0 20px;
+  color: rgb(228, 228, 228);
+}
+
+.createUser__form form input {
+  margin: 0 5px;
+}
