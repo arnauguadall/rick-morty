@@ -8,11 +8,8 @@ import "./characterDetail.css";
 const CharacterDetail = () => {
   let { id } = useParams();
   const [character, setCharacter] = useState({});
-  const [characterLocation, setCharacterLocation] = useState({});
 
   const { name, status, image, species, location, episode } = character;
-
-  console.log(character);
 
   useEffect(() => {
     if (id) {
