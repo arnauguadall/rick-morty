@@ -27,7 +27,7 @@ const Card = ({ character }) => {
         </div>
         <div className="card__status__align">Location: {location.name}</div>
 
-        <div>See detail</div>
+        <div>Click to see details</div>
       </div>
     </div>
   );
