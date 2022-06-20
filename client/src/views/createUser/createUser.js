@@ -37,6 +37,7 @@ const CreateUser = () => {
           <input
             type="text"
             name="name"
+            value={user}
             onChange={(e) => setUser(e.target.value)}
           />
         </label>
@@ -45,6 +46,7 @@ const CreateUser = () => {
           <input
             type="password"
             name="password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
