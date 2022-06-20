@@ -21,7 +21,7 @@ const CharacterList = () => {
     if (!charactersList) {
       dispatch(fetchCharacters());
     }
-  }, [dispatch]);
+  }, [dispatch, charactersList]);
 
   return (
     <>
