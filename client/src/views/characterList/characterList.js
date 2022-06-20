@@ -1,29 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCharacters } from "../../redux/charactersSlice.js";
 
 import Card from "../../components/card/card.js";
 
-import './characterList.css';
+import "./characterList.css";
 
 const CharacterList = () => {
-  const [list, setList] = useState({});
+  const dispatch = useDispatch();
+
+  const characters = useSelector((state) => state.characters);
+  const { loading, error, charactersList } = characters;
 
   useEffect(() => {
-    fetch("/characters")
-      .then((response) => response.json())
-      .then((characters) => {
-        setList(characters);
-        console.log(characters);
-      });
-  }, []);
+    if (!charactersList) {
+      dispatch(fetchCharacters());
+    }
+  }, [dispatch]);
 
   return (
-    <div className="characterList__layout_wrap">
-      {list
-        ? Object.keys(list).map((character) => (
-            <Card key={list[character].name} character={list[character]} />
-          ))
-        : "loading"}
-    </div>
+    <>
+      {error ?? null}
+      <div className="characterList__layout_wrap">
+        {charactersList
+          ? Object.keys(charactersList).map((character) => (
+              <Card
+                key={charactersList[character].name}
+                character={charactersList[character]}
+              />
+            ))
+          : loading}
+      </div>
+    </>
   );
 };
 
