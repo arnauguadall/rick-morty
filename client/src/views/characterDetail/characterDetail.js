@@ -12,7 +12,7 @@ const CharacterDetail = () => {
   const dispatch = useDispatch();
 
   const characters = useSelector((state) => state.characters);
-  const { loading, error, charactersList } = characters;
+  const { charactersList } = characters;
 
   const { name, status, image, species, location, episode, fav } =
     charactersList[id];
@@ -20,8 +20,6 @@ const CharacterDetail = () => {
   const handleFav = () => {
     dispatch(handleCharacterFav(id));
   };
-
-  console.log(charactersList[id]);
 
   const favStyle = fav ? "#D5D803" : "#FFFFFF";
 

@@ -41,10 +41,7 @@ export const charactersSlice = createSlice({
         },
         {}
       );
-      console.log(characterDictionary);
       state.charactersList = characterDictionary;
-
-      state.charactersList = action.payload;
       state.loading = false;
     },
     [fetchCharacters.rejected]: (state, action) => {

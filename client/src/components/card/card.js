@@ -4,11 +4,13 @@ import { ReactComponent as Star } from "../../assets/svg/star.svg";
 
 const Card = ({ character }) => {
   const navigate = useNavigate();
-  const { id, name, status, image, species, location } = character;
+  const { id, name, status, image, species, location, fav } = character;
 
   const handleOpenDetail = () => {
     return navigate(`/character/${id}`);
   };
+
+  const favStyle = fav ? "#D5D803" : "#FFFFFF";
 
   return (
     <div className="card__direction__row" onClick={handleOpenDetail}>
@@ -18,7 +20,7 @@ const Card = ({ character }) => {
 
       <div className="card__info__column">
         <div className="card__svg__fav">
-          <Star style={{ width: "44px", height: "44px" }} />
+          <Star style={{ width: "44px", height: "44px", fill: favStyle }} />
         </div>
         <h2>{name}</h2>
 
