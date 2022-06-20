@@ -29,7 +29,7 @@ When the user types a wrong URL like `http://localhost:3000/wrong-url` it will d
 
 ### Backend
 
-The backend is developed in Node using Express. I wanted to use a remote mongodb database using Atlas and I managed to make the connection and store the user but I run out of time so I coudln't implement the Login and consume the application under a logged user.
+The backend is developed in Node using Express. I wanted to use a remote mongodb database using Atlas and I managed to make the connection and store the user but I ran out of time so I coudln't implement the Login and consume the application under a logged user.
 
 To avoid handling too much information in the `/characters` request I only use the first 20 records that the API provides.
 
@@ -46,13 +46,13 @@ To avoid handling too much information in the `/characters` request I only use t
 
 I enjoyed very much the backend side, I don't have professional experience in the backend side but it was really fun trying to understand how the backend world works (or at least a little bit) and I hope I can learn a lot more in the company. 
 
-I would like to do the Login and returning a token for the user validation and also include all the data inside the DB and consume it directly from there.
+The things I would improve if I had more time would be do the Login and returning a token for the user validation and also include all the data inside the DB and consume it directly from there.
 
-The developer who will evaluate this challenge won't be able to see if the user is created since I used a remote db with mongodb Atlas. But I can share this picture.
+The developer who will evaluate this challenge won't be able to see if the user is created since I used a remote db with mongodb Atlas. But I can share this picture. (the password should be hashed, but I ran out of time).
 
 ![alt text](server/assets/user-creation.png)
 
-I would love to talk about this challenge in the next phase, then I can show you live the database if you are interested :)
+I would love to talk about this challenge in the next phase, then I can show you live the small database with the user creation example if you are interested :)
 
 
 ---
