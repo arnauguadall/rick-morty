@@ -8,8 +8,6 @@ const CreateUser = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
-    console.log(password);
 
     fetch("/user/create", {
       method: "POST",
