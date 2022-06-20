@@ -4,7 +4,7 @@ import { ReactComponent as Star } from "../../assets/svg/star.svg";
 
 const Card = ({ character }) => {
   const navigate = useNavigate();
-  const { id, name, status, image, species, location, fav } = character;
+  const { id, name, image, fav } = character;
 
   const handleOpenDetail = () => {
     return navigate(`/character/${id}`);
@@ -23,11 +23,7 @@ const Card = ({ character }) => {
           <Star style={{ width: "44px", height: "44px", fill: favStyle }} />
         </div>
         <h2>{name}</h2>
-
-        <div className="card__status__align">
-          <span className={`card__status__${status}`} /> {status} - {species}
-        </div>
-        <div className="card__status__align">Location: {location.name}</div>
+        <div className="card__status__align">Click to see more details!</div>
       </div>
     </div>
   );

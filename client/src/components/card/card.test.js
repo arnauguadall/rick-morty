@@ -46,9 +46,7 @@ describe("<Card /> component", () => {
 
   it("should render the character information shown in the card", () => {
     expect(screen.getByText(/Rick Sanchez/i)).toBeInTheDocument();
-    expect(screen.getByText(/Citadel of Ricks/i)).toBeInTheDocument();
-    expect(screen.getByText(/Alive/i)).toBeInTheDocument();
-    expect(screen.getByText(/Human/i)).toBeInTheDocument();
+    expect(screen.getByText(/Click to see more details!/i)).toBeInTheDocument();
   });
 
   test("should render the character image", () => {
