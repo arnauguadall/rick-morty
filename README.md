@@ -1,8 +1,8 @@
 # Rick & Morty Challenge
 
-## Requirements
 
-The project is divided in two parts, the client and the backend.
+
+The project is divided in two parts, the client and the backend. In the email it will the information that the developer will need to try the user creation functionality.
 
 ### Client
 
@@ -22,8 +22,42 @@ The client is developed in React and Redux. I wanted to have a smiliar style tha
     └── index.js       // entry point for the app, Provider for redux store
 ```
 
-All requests from the client are directly to the Express server and the routing is made by React router dom v6. 
+All requests from the client are directly to the Express server and the routing is made by React router dom v6. Using Redux was very useful because I only had to fetch data once, after that the store it's persistant in the SPA but not saved in the database.
 
+When the user types a wrong URL like `http://localhost:3000/wrong-url` it will display a 404 page and when you click the image it will redirect back to the home page.
+
+
+### Backend
+
+The backend is developed in Node using Express. I wanted to use a remote mongodb database using Atlas and I managed to make the connection and store the user but I run out of time so I coudln't implement the Login and consume the application under a logged user.
+
+To avoid handling too much information in the `/characters` request I only use the first 20 records that the API provides.
+
+### Architecture
+
+```
+/client
+    ├── /models        // the model used for the user creation form
+    ├── .env           // required configuration. MONGODB_URI will be shared within the email.
+    └── server.js      // server configuration, mongodb connection and all the endpoints created to use in from the client side
+```
+
+### To improve
+
+I enjoyed very much the backend side, I don't have professional experience in the backend side but it was really fun trying to understand how the backend world works (or at least a little bit) and I hope I can learn a lot more in the company. 
+
+I would like to do the Login and returning a token for the user validation and also include all the data inside the DB and consume it directly from there.
+
+The developer who will evaluate this challenge won't be able to see if the user is created since I used a remote db with mongodb Atlas. But I can share this picture.
+
+![alt text](server/assets/user-creation.png)
+
+I would love to talk about this challenge in the next phase, then I can show you live the database if you are interested :)
+
+
+---
+
+# Requirements
 ## General
 We need a fancy application, with backend and frontend, which consume the public API of
 Rick & Morty: https://rickandmortyapi.com. This API should be consumed from your backend
