@@ -14,3 +14,10 @@ body {
   font-weight: 900;
   font-size: 5.625rem;
 }
+
+@media screen and (max-width: 600px) {
+  .App h1 {
+    font-size: 3rem;
+  }
+}
+  

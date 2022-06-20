@@ -1,5 +1,5 @@
 .layout__nav__style {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .layout__nav__style ul {
@@ -10,6 +10,7 @@
   flex-direction: row;
   justify-content: center;
 }
+
 
 .layout__nav__style li {
   margin: 0 20px;
@@ -22,4 +23,12 @@
   z-index: 1;
   font-size: 2rem;
   text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .layout__nav__style ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

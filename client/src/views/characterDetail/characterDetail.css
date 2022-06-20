@@ -13,6 +13,7 @@
   box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
     rgb(0 0 0 / 6%) 0px 2px 4px -1px;
   border-radius: 0.5rem;
+  position: relative;
 }
 
 .characterDetail__img__width {
@@ -26,7 +27,6 @@
   justify-content: space-between;
   padding: 0 20px 20px 20px;
   color: white;
-  position: relative;
 }
 
 .characterDetail__row__align {
@@ -72,5 +72,39 @@
   justify-content: flex-end;
   padding: 85px 20px 20px 20px;
   color: white;
-  position: relative;
+}
+
+@media screen and (max-width: 600px) {
+  .characterDetail__direction__row {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0.75rem;
+    background: #3c3e44;
+    overflow: hidden;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
+      rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: relative;
+  }
+  .characterDetail__img__width img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .characterDetail__row__align {
+    margin-top: 10px;
+  }
+
+  .characterDetail__planet__column {
+    position: initial;
+  }
+
+  .characterDetail__svg__fav {
+    position: absolute;
+    top: 51%;
+    right: 10px;
+  }
 }

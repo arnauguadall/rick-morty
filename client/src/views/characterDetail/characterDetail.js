@@ -16,9 +16,8 @@ const CharacterDetail = () => {
       fetch(`/character/${id}`)
         .then((response) => response.json())
         .then((data) => {
-          setCharacter(data);       
+          setCharacter(data);
         });
-
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
@@ -45,14 +44,19 @@ const CharacterDetail = () => {
             Location: {location?.name || "Unknown"}
           </div>
 
-          <div>Seen in {episode?.length} episodes</div>
+          <div className="characterDetail__row__align">
+            Seen in {episode?.length} episodes
+          </div>
         </div>
         <div className="characterDetail__planet__column">
           <div className="characterDetail__svg__fav">
             <Star style={{ width: "44px", height: "44px", fill: fav }} />
           </div>
 
-          <div className="characterDetail__row__align"> Click the star to save to favs</div>
+          <div className="characterDetail__row__align">
+            {" "}
+            Click the star to save to favs
+          </div>
         </div>
       </div>
     </div>
