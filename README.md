@@ -55,6 +55,14 @@ The developer who will evaluate this challenge won't be able to see if the user 
 I would love to talk about this challenge in the next phase, then I can show you live the small database with the user creation example if you are interested :)
 
 
+### Feedback
+
+I would love to hear some feedback from you to know which areas can be improved.
+
+I hope you like the project.
+
+Happy coding!
+
 ---
 
 # Requirements
