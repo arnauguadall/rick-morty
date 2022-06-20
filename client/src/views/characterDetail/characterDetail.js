@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { handleCharacterFav } from "../../redux/charactersSlice.js";
 
 import { ReactComponent as Star } from "../../assets/svg/star.svg";
 
@@ -7,25 +9,19 @@ import "./characterDetail.css";
 
 const CharacterDetail = () => {
   let { id } = useParams();
-  const [character, setCharacter] = useState({});
-  const [fav, setFav] = useState(false);
+  const dispatch = useDispatch();
 
-  const { name, status, image, species, location, episode } = character;
+  const characters = useSelector((state) => state.characters);
+  const { loading, error, charactersList } = characters;
 
-  useEffect(() => {
-    if (id) {
-      fetch(`/character/${id}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setCharacter(data);
-        });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+  const { name, status, image, species, location, episode, fav } =
+    charactersList[id];
 
   const handleFav = () => {
-    setFav(!fav);
+    dispatch(handleCharacterFav(id));
   };
+
+  console.log(charactersList[id]);
 
   const favStyle = fav ? "#D5D803" : "#FFFFFF";
 

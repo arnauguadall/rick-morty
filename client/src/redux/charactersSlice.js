@@ -20,11 +20,30 @@ export const fetchCharacters = createAsyncThunk(
 export const charactersSlice = createSlice({
   name: "characters",
   initialState,
+  reducers: {
+    handleCharacterFav: (state, action) => {
+      state.charactersList[action.payload].fav =
+        !state.charactersList[action.payload].fav;
+    },
+  },
   extraReducers: {
-    [fetchCharacters.pending]: (state, action) => {
+    [fetchCharacters.pending]: (state) => {
       state.loading = true;
     },
     [fetchCharacters.fulfilled]: (state, action) => {
+      const characterDictionary = action.payload.reduce(
+        (accumulatedCharacters, currentCharacter) => {
+          accumulatedCharacters[currentCharacter.id] = {
+            ...currentCharacter,
+            fav: false,
+          };
+          return accumulatedCharacters;
+        },
+        {}
+      );
+      console.log(characterDictionary);
+      state.charactersList = characterDictionary;
+
       state.charactersList = action.payload;
       state.loading = false;
     },
@@ -34,5 +53,7 @@ export const charactersSlice = createSlice({
     },
   },
 });
+
+export const { handleCharacterFav } = charactersSlice.actions;
 
 export default charactersSlice.reducer;
