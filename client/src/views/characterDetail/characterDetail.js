@@ -7,6 +7,13 @@ import { ReactComponent as Star } from "../../assets/svg/star.svg";
 
 import "./characterDetail.css";
 
+/**
+ * CharacterDetail component
+ * It renders the character detail page and when it clicks the star icon it adds or removes
+ * the character from the favorites list saved in the redux store.
+ * 
+ * @returns {JSX.Element}
+ */
 const CharacterDetail = () => {
   let { id } = useParams();
   const dispatch = useDispatch();

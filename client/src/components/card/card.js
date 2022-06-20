@@ -2,6 +2,13 @@ import { useNavigate } from "react-router-dom";
 import "./card.css";
 import { ReactComponent as Star } from "../../assets/svg/star.svg";
 
+/**
+ * Card component
+ * It renders the card with the character info and when it is clicked it redirects to the character detail page
+ * It also shows if the user has click this character before as favorite
+ * @param {*} character 
+ * @returns 
+ */
 const Card = ({ character }) => {
   const navigate = useNavigate();
   const { id, name, image, fav } = character;

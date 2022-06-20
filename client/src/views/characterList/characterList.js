@@ -6,6 +6,11 @@ import Card from "../../components/card/card.js";
 
 import "./characterList.css";
 
+/**
+ * CharacterList component
+ * It renders the list of characters using the Card component
+ * @returns {JSX.Element}
+ */
 const CharacterList = () => {
   const dispatch = useDispatch();
 
