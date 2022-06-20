@@ -12,6 +12,7 @@ const CharacterList = () => {
       .then((response) => response.json())
       .then((characters) => {
         setList(characters);
+        console.log(characters);
       });
   }, []);
 

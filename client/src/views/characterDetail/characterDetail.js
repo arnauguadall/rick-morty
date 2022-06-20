@@ -8,6 +8,7 @@ import "./characterDetail.css";
 const CharacterDetail = () => {
   let { id } = useParams();
   const [character, setCharacter] = useState({});
+  const [fav, setFav] = useState(false);
 
   const { name, status, image, species, location, episode } = character;
 
@@ -22,7 +23,11 @@ const CharacterDetail = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  const fav = character.fav ? "#D5D803" : "#FFFFFF";
+  const handleFav = () => {
+    setFav(!fav);
+  };
+
+  const favStyle = fav ? "#D5D803" : "#FFFFFF";
 
   return id ? (
     <div className="characterDetail__position">
@@ -34,8 +39,8 @@ const CharacterDetail = () => {
           <h2>{name}</h2>
 
           <div className="characterDetail__row__align">
-            <span className={`characterDetail__status__${status}`} /> {status} -{" "}
-            {species}
+            <span className={`characterDetail__status__${status}`} />
+            {status} - {species}
           </div>
           <div className="characterDetail__row__align">
             Origin: {origin?.name || "Unknown"}
@@ -49,12 +54,11 @@ const CharacterDetail = () => {
           </div>
         </div>
         <div className="characterDetail__planet__column">
-          <div className="characterDetail__svg__fav">
-            <Star style={{ width: "44px", height: "44px", fill: fav }} />
+          <div className="characterDetail__svg__fav" onClick={handleFav}>
+            <Star style={{ width: "44px", height: "44px", fill: favStyle }} />
           </div>
 
           <div className="characterDetail__row__align">
-            {" "}
             Click the star to save to favs
           </div>
         </div>
