@@ -37,15 +37,6 @@ app.get("/characters", (req, res) => {
     });
 });
 
-// Get single character from API
-app.get("/character/:id", (req, res) => {
-  fetch(`https://rickandmortyapi.com/api/character/${req.params.id}`)
-    .then((response) => response.json())
-    .then((data) => {
-      res.json(data);
-    });
-});
-
 // Create new user using the User model for MongoDB
 app.post("/user/create", (req, res) => {
   const { user, password } = req.body;
