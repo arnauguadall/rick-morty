@@ -34,7 +34,8 @@ app.get("/characters", (req, res) => {
     .then((response) => response.json())
     .then((data) => {
       res.json(data.results);
-    });
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 // Create new user using the User model for MongoDB
