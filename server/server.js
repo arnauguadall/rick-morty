@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 
 import User from "./models/user.js";
 
-
+// ENV file configuration
 const port = process.env.PORT || 5000;
 const url = process.env.MONGODB_URI;
 
