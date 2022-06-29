@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCharacters } from "../../redux/charactersSlice.js";
+import { fetchCharacters } from "../../services/api.js";
 
 import Card from "../../components/card/card.js";
 

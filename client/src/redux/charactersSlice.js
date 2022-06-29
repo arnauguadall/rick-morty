@@ -1,21 +1,11 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchCharacters } from "../services/api.js";
 
 const initialState = {
   loading: false,
   charactersList: null,
   error: "",
 };
-
-export const fetchCharacters = createAsyncThunk(
-  "characters/fetchCharacters",
-  async () => {
-    return fetch("/characters")
-      .then((response) => response.json())
-      .then((characters) => {
-        return characters;
-      });
-  }
-);
 
 export const charactersSlice = createSlice({
   name: "characters",
